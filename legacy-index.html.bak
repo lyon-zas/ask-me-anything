@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ask Me Anything | Next Gen Africa</title>
+<meta name="description" content="A live podcast session by Next Gen Africa where young Africans ask the questions that shape careers and lives. Saturday 17 October 2026. 40 seats.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ask Me Anything | Next Gen Africa">
+<meta property="og:description" content="A live podcast session by Next Gen Africa where young Africans ask the questions that shape careers and lives. Saturday 17 October 2026. 40 seats.">
+<meta property="og:image" content="studio.jpg">
+<meta name="theme-color" content="#0c0c0e">
+<link rel="icon" href="logo-white.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap">
+<style>
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<style>
+/* Layout: one dark studio column behind a rail of red slats (the set's wall panels);
+   the episode rundown reads as podcast chapters; the form sits on armchair cream. */
+:root {
+  color-scheme: dark;
+  --ink: #0c0c0e;
+  --panel: #17171a;
+  --line: #36363c;
+  --text: #ffffff;
+  --muted: #cfcfd4;
+  --red: #ed1c24;
+  --red-deep: #c8141b;
+  --red-soft: #ff6268;
+  --cream: #efe6d8;
+  --cream-ink: #141416;
+  --cream-muted: #4a4640;
+  --display: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  --rail: 14px;
+  --gutter: 20px;
+}
+@media (min-width: 760px) { :root { --rail: 30px; --gutter: 40px; } }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--display);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.rail {
+  position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail); z-index: 5;
+  background: repeating-linear-gradient(90deg, var(--red) 0, var(--red) 7px, #5c070b 7px, #5c070b 10px);
+}
+.wrap {
+  max-width: 1160px; margin: 0 auto;
+  padding-left: calc(var(--rail) + var(--gutter)); padding-right: var(--gutter);
+}
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+.on-cream :focus-visible { outline-color: var(--cream-ink); }
+
+.label {
+  font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--red-soft);
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 12px 26px;
+  background: var(--red-deep); color: #ffffff;
+  font: 700 1rem/1.2 var(--display); letter-spacing: 0.02em; text-decoration: none;
+  border: 0; cursor: pointer;
+}
+.btn:hover { background: var(--red); }
+.btn.small { min-height: 44px; padding: 8px 18px; font-size: 0.9375rem; }
+.btn.dark { background: var(--cream-ink); }
+.btn.dark:hover { background: #2c2c30; }
+
+/* header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4;
+  background: var(--ink); border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; }
+.top img { height: 46px; width: auto; display: block; }
+
+/* hero */
+.hero .wrap { display: grid; gap: 32px; padding-block: 40px 56px; }
+.hero-copy { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.live { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.tally {
+  display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px;
+  border: 2px solid var(--text); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.14em;
+}
+.tally i { width: 11px; height: 11px; border-radius: 50%; background: var(--red); display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .tally i { animation: tally 1.6s ease-in-out infinite; }
+  @keyframes tally { 50% { opacity: 0.35; } }
+}
+.hero h1 {
+  font-size: clamp(3.1rem, 15vw, 8rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase;
+}
+.hero h1 span { display: block; }
+.tagline {
+  align-self: flex-start; background: var(--red); padding: 10px 16px;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem); font-weight: 700; line-height: 1.3;
+}
+.hero-lede { font-size: clamp(1rem, 1.6vw, 1.1875rem); color: var(--muted); max-width: 34em; }
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  border-top: 2px solid var(--text); border-bottom: 2px solid var(--text);
+}
+.facts div { padding: 14px 16px 14px 0; display: flex; flex-direction: column; gap: 2px; }
+.facts b { font-size: 1.125rem; font-weight: 700; line-height: 1.3; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.cta-row small { font-size: 0.875rem; color: var(--muted); max-width: 26em; }
+.hero-photo { min-width: 0; }
+.hero-photo img { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
+@media (min-width: 960px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); align-items: end; gap: 48px; padding-block: 56px 72px; }
+  .hero h1 { font-size: clamp(4.5rem, 8.8vw, 7.5rem); }
+  .hero-photo img { aspect-ratio: 4 / 5; object-position: center 100%; }
+}
+
+/* sections */
+section .wrap { padding-block: 64px; }
+.section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; max-width: 46em; }
+.section-head h2 { font-size: clamp(1.9rem, 4.6vw, 3.1rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; }
+.section-head p { color: var(--muted); font-size: 1.0625rem; }
+
+.promise { background: var(--red); }
+.promise .wrap { display: grid; gap: 20px; padding-block: 48px; }
+.promise h2 { font-size: clamp(1.8rem, 5vw, 3.4rem); font-weight: 800; font-style: italic; line-height: 1.1; letter-spacing: -0.02em; max-width: 18em; }
+.promise p { font-size: 1.125rem; font-weight: 500; max-width: 40em; }
+
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 28px 36px; }
+.pillars div { border-top: 3px solid var(--red); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.pillars h3 { font-size: 1.375rem; font-weight: 700; }
+.pillars p { color: var(--muted); }
+
+.episode { background: var(--panel); }
+.episode-grid { display: grid; gap: 36px; }
+.quote { font-size: clamp(1.4rem, 3.4vw, 2.2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; border-left: 6px solid var(--red); padding-left: 20px; }
+.quote em { font-style: normal; color: var(--red-soft); }
+.episode-body { color: var(--muted); font-size: 1.0625rem; max-width: 38em; display: flex; flex-direction: column; gap: 14px; }
+.ps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.ps div { background: var(--panel); padding: 18px; display: flex; flex-direction: column; gap: 4px; }
+.ps h3 { font-size: 1.25rem; font-weight: 800; }
+.ps p { color: var(--muted); font-size: 0.9375rem; }
+@media (min-width: 960px) { .episode-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; } .ps { grid-column: 1 / -1; } }
+
+.room-grid { display: grid; gap: 40px; }
+.chapters { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--text); }
+.chapters li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 4px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.chapters time { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--red-soft); font-size: 0.9375rem; padding-top: 3px; }
+.chapters h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.3; }
+.chapters p { color: var(--muted); font-size: 0.9375rem; grid-column: 2; }
+.corner { background: var(--cream); color: var(--cream-ink); padding: 28px; display: flex; flex-direction: column; gap: 14px; align-self: start; }
+.corner .label { color: var(--red-deep); }
+.corner h3 { font-size: 1.75rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.01em; }
+.corner p { color: var(--cream-muted); }
+.corner ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+@media (min-width: 960px) { .room-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 56px; } }
+
+.leave { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 24px 32px; }
+.leave div { display: flex; flex-direction: column; gap: 2px; }
+.leave b { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; color: var(--red-soft); }
+.leave span { font-size: 1.5rem; font-weight: 800; line-height: 1.2; }
+.who { margin-top: 36px; color: var(--muted); font-size: 1.0625rem; max-width: 44em; }
+.who strong { color: var(--text); font-weight: 600; }
+
+.people { background: var(--panel); }
+.people-grid { display: grid; gap: 36px; }
+.host-note { display: flex; flex-direction: column; gap: 14px; max-width: 40em; }
+.host-note p { color: var(--muted); font-size: 1.0625rem; }
+.host-note .sign { color: var(--text); font-weight: 700; }
+.host-note .sign small { display: block; font-weight: 400; color: var(--muted); font-size: 0.875rem; }
+.speakers { display: flex; flex-direction: column; gap: 14px; }
+.seats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.seats div { border: 2px dashed var(--line); aspect-ratio: 3 / 4; max-width: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; gap: 2px; min-width: 0; }
+.seats b { font-size: 0.75rem; letter-spacing: 0.14em; color: var(--red-soft); font-weight: 600; }
+.seats span { font-size: 0.9375rem; font-weight: 600; line-height: 1.3; }
+.speakers p { color: var(--muted); font-size: 0.9375rem; }
+@media (min-width: 960px) { .people-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 64px; } }
+
+/* registration */
+.register { background: var(--cream); color: var(--cream-ink); }
+.register .label { color: var(--red-deep); }
+.register .section-head p { color: var(--cream-muted); }
+.reg-grid { display: grid; gap: 36px; }
+.reg-side { display: flex; flex-direction: column; gap: 16px; }
+.reg-side ul { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--cream-ink); }
+.reg-side li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #b8ae9e; }
+.reg-side li span { color: var(--cream-muted); }
+.reg-side li b { font-weight: 700; text-align: right; }
+form { display: grid; gap: 18px; min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label { font-weight: 600; font-size: 0.9375rem; }
+.field input, .field select, .field textarea {
+  font: 400 1rem/1.4 var(--display); color: var(--cream-ink);
+  background: #ffffff; border: 2px solid var(--cream-ink); border-radius: 0;
+  padding: 12px 14px; width: 100%; min-height: 50px; color-scheme: light;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field .hint { font-size: 0.8125rem; color: var(--cream-muted); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 18px; }
+.check { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; font-size: 0.9375rem; }
+.check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--red-deep); color-scheme: light; }
+.error { color: #9a0d13; font-weight: 600; font-size: 0.9375rem; }
+.setup { border: 2px dashed var(--red-deep); padding: 14px 16px; font-size: 0.9375rem; margin-bottom: 20px; }
+.setup b { color: var(--red-deep); }
+.open-form { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; border: 2px solid var(--cream-ink); background: #ffffff; padding: 28px; }
+.open-form p { color: var(--cream-muted); max-width: 34em; }
+.done { display: flex; flex-direction: column; gap: 16px; border: 2px solid var(--cream-ink); background: #ffffff; padding: 24px; min-width: 0; }
+.done h3 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; }
+.done pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 400 0.9375rem/1.5 var(--display); background: var(--cream); padding: 14px; }
+.done .row { display: flex; flex-wrap: wrap; gap: 12px; }
+.done .row button.link { background: none; border: 0; padding: 0; min-height: 44px; font: 600 0.9375rem var(--display); color: var(--cream-ink); text-decoration: underline; cursor: pointer; }
+@media (min-width: 960px) { .reg-grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; } }
+
+/* faq */
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-of-type { border-top: 2px solid var(--text); }
+.faq summary { cursor: pointer; padding: 18px 0; font-size: 1.125rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--red-soft); font-weight: 700; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--muted); padding: 0 0 20px; max-width: 44em; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 36px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; }
+footer img { height: 84px; width: auto; display: block; }
+footer p { color: var(--muted); font-size: 0.9375rem; max-width: 36em; }
+</style>
+</head>
+<body>
+<div class="rail" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo-white.png" alt="Next Gen Africa Talks. Driving Change From Within">
+    <a class="btn small" href="https://forms.gle/kJfmzGLr8kRFn8rHA" target="_blank" rel="noopener">Register</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="live">
+        <span class="tally"><i></i>LIVE PODCAST RECORDING</span>
+        <span class="label">Episode 01 · A birthday project by Goodness Alabi</span>
+      </div>
+      <h1><span>Ask Me</span><span>Anything</span></h1>
+      <p class="tagline">Young people. Real questions. Honest conversations.</p>
+      <p class="hero-lede">A live podcast session where young Africans ask the questions that shape careers and lives, and three people who have walked the road answer honestly.</p>
+      <div class="facts">
+        <div><span class="label">Date</span><b>Sat 17 October 2026</b></div>
+        <div><span class="label">Time</span><b>To be announced</b></div>
+        <div><span class="label">Venue</span><b>To be announced</b></div>
+        <div><span class="label">Room</span><b>40 seats</b></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="https://forms.gle/kJfmzGLr8kRFn8rHA" target="_blank" rel="noopener">Register for a seat</a>
+        <small>Free. Seats are curated. Registration closes Tuesday 13 October.</small>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <picture><source media="(min-width: 960px)" srcset="studio.jpg"><img src="studio-set.jpg" alt="The open studio set: two cream armchairs, podcast microphones and a red side table"></picture>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="wrap">
+    <h2>You may just be one answer away from your next big break.</h2>
+    <p>We all have questions. Career questions. Money questions. "Am I doing this right?" questions. Most of us work them out alone. Ask Me Anything is the room where you get to ask, with the people who might have the answers sitting across from you.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Why this room</span>
+      <h2>No speeches. No slides. A conversation.</h2>
+    </div>
+    <div class="pillars">
+      <div><h3>Real questions</h3><p>Yours. Sent in before the day or asked live from your seat. No question is too basic.</p></div>
+      <div><h3>Honest answers</h3><p>Three speakers telling the truth about how it actually happened for them, and what they would do differently.</p></div>
+      <div><h3>Real connections</h3><p>The session ends in the Connection Room, where you meet the speakers and the people sitting beside you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="episode">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Episode 01</span>
+      <h2>Getting It Right With Networking</h2>
+      <p>How to build and sustain long-term relationships when you're just starting out.</p>
+    </div>
+    <div class="episode-grid">
+      <p class="quote">Networking isn't about knowing everyone. <em>It's about becoming someone worth knowing.</em></p>
+      <div class="episode-body">
+        <p>Networking doesn't start with networking. It starts with who you are becoming. Before you ask "who do I know?", ask "who am I becoming?"</p>
+        <p>Then it gets intentional: the people you build with, the places you position yourself, and how you show up once you are in the room.</p>
+      </div>
+      <div class="ps">
+        <div><h3>Person</h3><p>Who are you becoming?</p></div>
+        <div><h3>People</h3><p>Who are you building relationships with?</p></div>
+        <div><h3>Places</h3><p>Where are you positioning yourself?</p></div>
+        <div><h3>Participation</h3><p>How are you showing up and contributing?</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">In the room</span>
+      <h2>90 minutes. Eight moments.</h2>
+      <p>The episode rundown, start to finish. Cameras roll for the first 75 minutes.</p>
+    </div>
+    <div class="room-grid">
+      <ol class="chapters">
+        <li><time>0:00</time><h3>The Open</h3><p>One question to start the room thinking.</p></li>
+        <li><time>0:05</time><h3>This or That</h3><p>A quick game. You vote with a card, the speakers defend their side.</p></li>
+        <li><time>0:10</time><h3>The Conversation</h3><p>The host and three speakers on the 4Ps of networking.</p></li>
+        <li><time>0:30</time><h3>Ask Me Anything</h3><p>The microphone comes to you.</p></li>
+        <li><time>0:55</time><h3>The Hot Seat</h3><p>A guest draws one surprise question for each speaker.</p></li>
+        <li><time>1:03</time><h3>The One Thing</h3><p>Each speaker shares the one lesson they wish they had heard earlier.</p></li>
+        <li><time>1:10</time><h3>Opportunity Corner</h3><p>Jobs, fellowships, grants and events that are open right now.</p></li>
+        <li><time>1:15</time><h3>The Connection Room</h3><p>Cameras off. Connection Bingo, then open networking.</p></li>
+      </ol>
+      <aside class="corner">
+        <span class="label">New every episode</span>
+        <h3>Opportunity Corner</h3>
+        <p>Every episode ends with openings you can act on that week.</p>
+        <ul>
+          <li>Live opportunities shared from the stage by the host and speakers</li>
+          <li>An Asks and Offers board where you pin what you need and what you can give</li>
+          <li>The full list sent to your WhatsApp the next day</li>
+        </ul>
+        <p>And the best question of the day wins a one-on-one call with a speaker.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="episode">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">What you leave with</span>
+      <h2>Four things, and possibly one answer that changes something.</h2>
+    </div>
+    <div class="leave">
+      <div><b>ONE</b><span>new idea</span></div>
+      <div><b>ONE</b><span>practical action</span></div>
+      <div><b>ONE</b><span>new perspective</span></div>
+      <div><b>ONE</b><span>meaningful connection</span></div>
+    </div>
+    <p class="who"><strong>Who it's for:</strong> students, graduates, young professionals, founders, freelancers and creatives who are building themselves and want to build the right relationships along the way.</p>
+  </div>
+</section>
+
+<section class="people">
+  <div class="wrap">
+    <div class="people-grid">
+      <div class="host-note">
+        <span class="label">A note from the host</span>
+        <h2 style="font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;">Why I'm doing this for my birthday</h2>
+        <p>Every year, a birthday gives us a reason to celebrate another year of life. This year I wanted to do something different. I wanted to create a room.</p>
+        <p>A room where young people can ask the questions they are figuring out alone, about careers, relationships, networking, life and becoming, and sit across from people who have walked some of those roads before them.</p>
+        <p>So for my birthday, I'm launching Ask Me Anything by Next Gen Africa.</p>
+        <p class="sign">Goodness Alabi<small>Host, and founder of Next Gen Africa</small></p>
+      </div>
+      <div class="speakers">
+        <span class="label">The people behind the conversation</span>
+        <div class="seats">
+          <div><b>SPEAKER 1</b><span>Revealed Sat 10 Oct</span></div>
+          <div><b>SPEAKER 2</b><span>Revealed Sun 11 Oct</span></div>
+          <div><b>SPEAKER 3</b><span>Revealed Mon 12 Oct</span></div>
+        </div>
+        <p>Three speakers, revealed one a day from Saturday 10 October.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="register on-cream" id="register">
+  <div class="wrap">
+    <div class="reg-grid">
+      <div class="reg-side">
+        <div class="section-head" style="margin-bottom: 0;">
+          <span class="label">Registration</span>
+          <h2>Ask for your seat</h2>
+          <p>There are 40 seats. Tell us who you are and what you want to ask. We confirm seats on WhatsApp within 48 hours.</p>
+        </div>
+        <ul>
+          <li><span>Date</span><b>Saturday 17 October 2026</b></li>
+          <li><span>Cost</span><b>Free</b></li>
+          <li><span>Registration closes</span><b>Tuesday 13 October</b></li>
+          <li><span>Venue and time</span><b>Sent with your confirmation</b></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="setup" id="setup-note" hidden><b>Not live yet.</b> This form needs a WhatsApp number or a form link before the page is shared. Until then, a registration can only be copied.</p>
+
+        <div class="open-form" id="open-form"><a class="btn dark" id="external-form" href="https://forms.gle/kJfmzGLr8kRFn8rHA" target="_blank" rel="noopener">Open the registration form</a><p>The form opens in a new tab and takes about two minutes. Have your one question ready: if you could ask someone ten years ahead of you one question about life, career or relationships, what would you ask?</p></div>
+
+        <form id="reg-form" novalidate hidden>
+          <div class="two">
+            <div class="field"><label for="reg-name">Full name</label><input id="reg-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="reg-whatsapp">WhatsApp number</label><input id="reg-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+234" required></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="reg-email">Email</label><input id="reg-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="reg-work">What do you do?</label><input id="reg-work" name="work" type="text" placeholder="Final-year student, product designer, baker" required></div>
+          </div>
+          <div class="field">
+            <label for="reg-stage">Where are you right now?</label>
+            <select id="reg-stage" name="stage" required>
+              <option value="">Choose one</option>
+              <option>Student</option>
+              <option>Recent graduate</option>
+              <option>Early career</option>
+              <option>Founder or freelancer</option>
+              <option>Creative</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="reg-question">Your one question</label>
+            <textarea id="reg-question" name="question" required></textarea>
+            <span class="hint">If you could ask someone ten years ahead of you one question about life, career or relationships, what would you ask?</span>
+          </div>
+          <label class="check" for="reg-consent"><input id="reg-consent" name="consent" type="checkbox" required><span>I understand the session is filmed and published as a podcast episode and short clips.</span></label>
+          <p class="error" id="reg-error" role="alert" hidden></p>
+          <div><button class="btn dark" type="submit">Prepare my registration</button></div>
+        </form>
+
+        <div class="done" id="reg-done" hidden>
+          <h3 id="done-title">One more step: send it</h3>
+          <p id="done-text"></p>
+          <pre id="done-msg"></pre>
+          <div class="row">
+            <a class="btn" id="done-wa" href="#register" target="_blank" rel="noopener" hidden>Send on WhatsApp</a>
+            <button class="btn dark" id="done-copy" type="button">Copy registration</button>
+            <button class="link" id="done-edit" type="button">Edit my answers</button>
+          </div>
+          <p class="hint" id="done-copied" role="status" hidden>Copied.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head"><span class="label">Questions</span><h2>Before you register</h2></div>
+    <details><summary>What does it cost?</summary><p>Nothing. Episode 01 is free. We only ask that you show up if you take a seat.</p></details>
+    <details><summary>Who can come?</summary><p>Young people who are starting out or building: students, graduates, young professionals, founders and creatives.</p></details>
+    <details><summary>How do I know I have a seat?</summary><p>We send a confirmation on WhatsApp. Reply YES within 24 hours to hold it. Seats not confirmed go to the waitlist.</p></details>
+    <details><summary>Is it recorded?</summary><p>Yes. It is a live podcast recording, filmed and published as an episode and as short clips. By attending you agree to appear in it.</p></details>
+    <details><summary>Can I bring a friend?</summary><p>Each person needs their own registration, because seats are limited.</p></details>
+    <details><summary>I can't make it. Can I still watch?</summary><p>Yes. The full episode goes out the week after. Follow Next Gen Africa to see it first.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-white.png" alt="Next Gen Africa Talks. Driving Change From Within">
+    <p>Ask Me Anything is Next Gen Africa's monthly conversation series, launched as Goodness Alabi's 2026 birthday project.</p>
+  </div>
+</footer>
+
+<script>
+// Where registrations go. Fill ONE of these before sharing the page.
+var CONFIG = {
+  whatsappNumber: "",   // digits only with country code, e.g. "2348012345678"
+  formUrl: "https://forms.gle/kJfmzGLr8kRFn8rHA"           // or a full https link to a Google Form
+};
+
+(function () {
+  var form = document.getElementById('reg-form');
+  var done = document.getElementById('reg-done');
+  var err = document.getElementById('reg-error');
+  var setup = document.getElementById('setup-note');
+  var ext = document.getElementById('external-form');
+  var wa = document.getElementById('done-wa');
+  var copied = document.getElementById('done-copied');
+  var number = (CONFIG.whatsappNumber || '').replace(/\D/g, '');
+  var formUrl = /^https:\/\//.test(CONFIG.formUrl || '') ? CONFIG.formUrl : '';
+
+  if (formUrl) { ext.href = formUrl; form.hidden = true; }
+  else if (!number) { setup.hidden = false; }
+
+  function val(id) { return document.getElementById(id).value.trim(); }
+
+  function buildMessage() {
+    return [
+      'ASK ME ANYTHING, Episode 01: seat request',
+      'Name: ' + val('reg-name'),
+      'WhatsApp: ' + val('reg-whatsapp'),
+      'Email: ' + val('reg-email'),
+      'What I do: ' + val('reg-work'),
+      'Stage: ' + val('reg-stage'),
+      'My question: ' + val('reg-question'),
+      'I understand the session is filmed and published.'
+    ].join('\n');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var missing = [];
+    [['reg-name', 'your name'], ['reg-whatsapp', 'your WhatsApp number'], ['reg-email', 'your email'],
+     ['reg-work', 'what you do'], ['reg-stage', 'where you are right now'], ['reg-question', 'your question']]
+      .forEach(function (f) { if (!val(f[0])) missing.push(f[1]); });
+    var email = val('reg-email');
+    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) missing.push('a valid email address');
+    if (!document.getElementById('reg-consent').checked) missing.push('the recording tick box');
+    if (missing.length) {
+      err.textContent = 'Please add ' + missing.join(', ') + '.';
+      err.hidden = false;
+      return;
+    }
+    err.hidden = true;
+    var msg = buildMessage();
+    document.getElementById('done-msg').textContent = msg;
+    if (number) {
+      wa.href = 'https://wa.me/' + number + '?text=' + encodeURIComponent(msg);
+      wa.hidden = false;
+      document.getElementById('done-text').textContent = 'Your registration is ready. Tap Send on WhatsApp and press send in the chat that opens. Your seat request only reaches us once that message is sent.';
+    } else {
+      wa.hidden = true;
+      document.getElementById('done-text').textContent = 'Your registration is ready. Copy it and send it to the Next Gen Africa team on WhatsApp.';
+    }
+    copied.hidden = true;
+    form.hidden = true;
+    done.hidden = false;
+    done.scrollIntoView({ block: 'nearest' });
+  });
+
+  document.getElementById('done-edit').addEventListener('click', function () {
+    done.hidden = true; form.hidden = false;
+  });
+
+  document.getElementById('done-copy').addEventListener('click', function () {
+    var pre = document.getElementById('done-msg');
+    function selectText() {
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copied.textContent = 'Text selected. Press copy on your keyboard or long-press to copy.';
+      copied.hidden = false;
+    }
+    try {
+      navigator.clipboard.writeText(pre.textContent).then(function () {
+        copied.textContent = 'Copied.'; copied.hidden = false;
+      }, selectText);
+    } catch (x) { selectText(); }
+  });
+})();
+</script>
+</body>
+</html>
