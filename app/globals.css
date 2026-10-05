@@ -218,3 +218,81 @@ footer { border-top: 1px solid var(--line); }
 footer .wrap { padding-block: 36px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; }
 footer img { height: 84px; width: auto; display: block; }
 footer p { color: var(--muted); font-size: 0.9375rem; max-width: 36em; }
+
+/* ---------- life: static pieces ---------- */
+.rail { overflow: hidden; }
+.rail::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
+  height: 40%; transform: translateY(-100%);
+}
+
+.countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 28em; min-height: 78px; }
+.countdown div { border: 2px solid var(--text); padding: 8px 6px 6px; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+.countdown b { font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.countdown span { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red-soft); }
+.countdown-done { font-weight: 700; font-size: 1.125rem; color: var(--red-soft); }
+
+.marquee { background: var(--cream); color: var(--cream-ink); overflow: hidden; border-block: 2px solid var(--cream-ink); }
+.marquee-track { display: flex; width: max-content; }
+.marquee ul { display: flex; flex-shrink: 0; margin: 0; padding: 0; list-style: none; }
+.marquee li { padding: 12px 0; font-weight: 800; font-size: 1.125rem; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.marquee li::after { content: "\25CF"; color: var(--red-deep); margin-inline: 28px; font-size: 0.7em; vertical-align: middle; }
+
+.faq summary::after { display: inline-block; flex-shrink: 0; }
+.faq details[open] summary::after { content: "+"; transform: rotate(45deg); }
+.chapters li { position: relative; }
+.chapters li::before {
+  content: ""; position: absolute; left: -12px; top: 12px; bottom: 12px; width: 4px; background: var(--red);
+  transform: scaleY(0); transform-origin: top;
+}
+
+/* ---------- life: motion (opt-in only) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } }
+  @keyframes photo-in { from { opacity: 0; transform: scale(1.06); } }
+  @keyframes slat-sheen { to { transform: translateY(350%); } }
+  @keyframes ticker { to { transform: translateX(-50%); } }
+  @keyframes seat-pulse { 50% { border-color: var(--red-soft); } }
+
+  /* scroll reveal; hidden only when JS is running, so no-JS visitors still see everything */
+  .js [data-reveal]:not(.in) { opacity: 0; }
+  .js [data-reveal].in { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: var(--d, 0ms); }
+
+  /* hero entrance */
+  .hero-copy > * { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+  .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+  .hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+  .hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+  .hero-copy > :nth-child(5) { animation-delay: 0.32s; }
+  .hero-copy > :nth-child(6) { animation-delay: 0.4s; }
+  .hero-copy > :nth-child(7) { animation-delay: 0.48s; }
+  .hero h1 span:nth-child(2) { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.14s backwards; }
+  .hero-photo { overflow: hidden; }
+  .hero-photo img { animation: photo-in 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s backwards; }
+
+  .rail::after { animation: slat-sheen 7s ease-in-out infinite; }
+  .marquee-track { animation: ticker 28s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .seats div { animation: seat-pulse 3.2s ease-in-out infinite; }
+  .seats div:nth-child(2) { animation-delay: 0.4s; }
+  .seats div:nth-child(3) { animation-delay: 0.8s; }
+
+  .btn { transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35); }
+  .btn:active { transform: translateY(0); box-shadow: none; }
+
+  .pillars div { transition: transform 0.25s ease, border-color 0.25s ease; }
+  .pillars div:hover { transform: translateY(-5px); border-top-color: var(--text); }
+  .ps div { transition: background-color 0.25s ease; }
+  .ps div:hover { background: #222227; }
+  .chapters li::before { transition: transform 0.25s ease; }
+  .chapters li:hover::before { transform: scaleY(1); }
+  .chapters time { transition: color 0.2s ease; }
+  .chapters li:hover time { color: var(--text); }
+  .faq summary::after { transition: transform 0.25s ease; }
+  .faq details[open] p { animation: fade 0.35s ease; }
+
+  .done, .error { animation: fade 0.4s ease; }
+}

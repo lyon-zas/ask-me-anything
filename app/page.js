@@ -1,7 +1,11 @@
 import RegistrationForm from "../components/RegistrationForm";
+import Countdown from "../components/Countdown";
+import RevealObserver from "../components/RevealObserver";
 
 const FORM_URL = "https://forms.gle/kJfmzGLr8kRFn8rHA";
 const LOGO_ALT = "Next Gen Africa Talks. Driving Change From Within";
+
+const ticker = ["Ask Me Anything", "Sat 17 Oct 2026", "40 seats", "Free", "Live podcast recording"];
 
 const chapters = [
   ["0:00", "The Open", "One question to start the room thinking."],
@@ -26,6 +30,7 @@ const faqs = [
 export default function Home() {
   return (
     <>
+      <RevealObserver />
       <div className="rail" aria-hidden="true" />
 
       <header className="top">
@@ -75,6 +80,7 @@ export default function Home() {
                   <b>40 seats</b>
                 </div>
               </div>
+              <Countdown />
               <div className="cta-row">
                 <a className="btn" href={FORM_URL} target="_blank" rel="noopener noreferrer">
                   Register for a seat
@@ -94,6 +100,18 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee-track">
+            {[0, 1].map((n) => (
+              <ul key={n}>
+                {ticker.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+
         <section className="promise">
           <div className="wrap">
             <h2>You may just be one answer away from your next big break.</h2>
@@ -107,23 +125,23 @@ export default function Home() {
 
         <section>
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head" data-reveal>
               <span className="label">Why this room</span>
               <h2>No speeches. No slides. A conversation.</h2>
             </div>
             <div className="pillars">
-              <div>
+              <div data-reveal>
                 <h3>Real questions</h3>
                 <p>Yours. Sent in before the day or asked live from your seat. No question is too basic.</p>
               </div>
-              <div>
+              <div data-reveal style={{ "--d": "120ms" }}>
                 <h3>Honest answers</h3>
                 <p>
                   Three speakers telling the truth about how it actually happened for them, and what they would do
                   differently.
                 </p>
               </div>
-              <div>
+              <div data-reveal style={{ "--d": "240ms" }}>
                 <h3>Real connections</h3>
                 <p>
                   The session ends in the Connection Room, where you meet the speakers and the people sitting beside you.
@@ -135,16 +153,16 @@ export default function Home() {
 
         <section className="episode">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head" data-reveal>
               <span className="label">Episode 01</span>
               <h2>Getting It Right With Networking</h2>
               <p>How to build and sustain long-term relationships when you&apos;re just starting out.</p>
             </div>
             <div className="episode-grid">
-              <p className="quote">
+              <p className="quote" data-reveal>
                 Networking isn&apos;t about knowing everyone. <em>It&apos;s about becoming someone worth knowing.</em>
               </p>
-              <div className="episode-body">
+              <div className="episode-body" data-reveal style={{ "--d": "120ms" }}>
                 <p>
                   Networking doesn&apos;t start with networking. It starts with who you are becoming. Before you ask
                   &quot;who do I know?&quot;, ask &quot;who am I becoming?&quot;
@@ -154,7 +172,7 @@ export default function Home() {
                   up once you are in the room.
                 </p>
               </div>
-              <div className="ps">
+              <div className="ps" data-reveal>
                 <div>
                   <h3>Person</h3>
                   <p>Who are you becoming?</p>
@@ -178,22 +196,22 @@ export default function Home() {
 
         <section>
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head" data-reveal>
               <span className="label">In the room</span>
               <h2>90 minutes. Eight moments.</h2>
               <p>The episode rundown, start to finish. Cameras roll for the first 75 minutes.</p>
             </div>
             <div className="room-grid">
               <ol className="chapters">
-                {chapters.map(([time, title, text]) => (
-                  <li key={time}>
+                {chapters.map(([time, title, text], i) => (
+                  <li key={time} data-reveal style={{ "--d": `${(i % 4) * 80}ms` }}>
                     <time>{time}</time>
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </li>
                 ))}
               </ol>
-              <aside className="corner">
+              <aside className="corner" data-reveal>
                 <span className="label">New every episode</span>
                 <h3>Opportunity Corner</h3>
                 <p>Every episode ends with openings you can act on that week.</p>
@@ -210,11 +228,11 @@ export default function Home() {
 
         <section className="episode">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head" data-reveal>
               <span className="label">What you leave with</span>
               <h2>Four things, and possibly one answer that changes something.</h2>
             </div>
-            <div className="leave">
+            <div className="leave" data-reveal>
               <div>
                 <b>ONE</b>
                 <span>new idea</span>
@@ -232,7 +250,7 @@ export default function Home() {
                 <span>meaningful connection</span>
               </div>
             </div>
-            <p className="who">
+            <p className="who" data-reveal>
               <strong>Who it&apos;s for:</strong> students, graduates, young professionals, founders, freelancers and
               creatives who are building themselves and want to build the right relationships along the way.
             </p>
@@ -242,7 +260,7 @@ export default function Home() {
         <section className="people">
           <div className="wrap">
             <div className="people-grid">
-              <div className="host-note">
+              <div className="host-note" data-reveal>
                 <span className="label">A note from the host</span>
                 <h2
                   style={{
@@ -268,7 +286,7 @@ export default function Home() {
                   Goodness Alabi<small>Host, and founder of Next Gen Africa</small>
                 </p>
               </div>
-              <div className="speakers">
+              <div className="speakers" data-reveal style={{ "--d": "150ms" }}>
                 <span className="label">The people behind the conversation</span>
                 <div className="seats">
                   <div>
@@ -293,7 +311,7 @@ export default function Home() {
         <section className="register on-cream" id="register">
           <div className="wrap">
             <div className="reg-grid">
-              <div className="reg-side">
+              <div className="reg-side" data-reveal>
                 <div className="section-head" style={{ marginBottom: 0 }}>
                   <span className="label">Registration</span>
                   <h2>Ask for your seat</h2>
@@ -328,12 +346,12 @@ export default function Home() {
 
         <section className="faq">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head" data-reveal>
               <span className="label">Questions</span>
               <h2>Before you register</h2>
             </div>
-            {faqs.map(([q, a]) => (
-              <details key={q}>
+            {faqs.map(([q, a], i) => (
+              <details key={q} data-reveal style={{ "--d": `${i * 60}ms` }}>
                 <summary>{q}</summary>
                 <p>{a}</p>
               </details>
